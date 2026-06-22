@@ -1,0 +1,287 @@
+{
+  "editable-greeting": "Hello! I'm",
+  "editable-name": "Kammari Sushma",
+  "editable-about": "I am a self-taught AI &amp; Full-Stack Developer.",
+  "profileImage": "/uploads/1782044982870.png",
+  "resumeFile": "/uploads/1782045001742.pdf",
+  "internships": [
+    {
+      "title": "Fundraising intern at Tare Zameen Foundation",
+      "subtitle": "11 Nov 2022 - 10 Dec 2022",
+      "description": "Successfully completed designated responsibilities and contributed to the initiatives of the Tare Zameen Foundation.",
+      "link": ""
+    },
+    {
+      "title": "B2B Drive intern at Leadsmark",
+      "subtitle": "11 Nov 2024 - 11 Apr 2025",
+      "description": "Completed a 5-month internship at B2B Drive, recognized for displaying great competence, rigour, and excellence across all assigned tasks.",
+      "link": ""
+    },
+    {
+      "title": "Email Marketing Internship at GEMA ",
+      "subtitle": "21 May 2024 - 21 June 2024",
+      "description": "Executed targeted bulk email and messaging campaigns while collaborating remotely to support digital outreach initiatives.",
+      "link": ""
+    },
+    {
+      "title": "AI & Prompt Engineering at VaultofCodes",
+      "subtitle": "20 Apr 2024 - 20 May 2024",
+      "description": "Completed a 1-month AI & Prompt Engineering internship at VaultofCodes, where I developed technically sound and result-oriented solutions.",
+      "link": ""
+    },
+    {
+      "title": "Python Programming Intern at DevSkillhub",
+      "subtitle": "09 Feb 2024 - 09 Apr 2024",
+      "description": "Completed a two-month Python Programming internship at DevSkillHub, building practical project contributions and advancing technical skills.",
+      "link": ""
+    },
+    {
+      "title": "Full Stack intern at Dexterity Edtech",
+      "subtitle": "1 June 2024- 31 July 2024",
+      "description": "Successfully completed an internship program, gaining hands-on experience and contributing to professional objectives.",
+      "link": ""
+    },
+    {
+      "title": "Artificial intelligence and Data Analytics",
+      "subtitle": "15 July 2025 - 16 August 2025",
+      "description": "Completed a 4 week virtual internship focused on Green Skills, organised by AICTE, Shell India Markets pvt ltd and Edunet Foundation under Skills4Future program",
+      "link": ""
+    },
+    {
+      "title": "Tech University Engagement Program",
+      "subtitle": "10 Mar 2026 - 5 Apr 2026",
+      "description": "Completed a Virtual Internship on Cybersecurity under the AICTE and 'VOIS for Tech University Engagement Program implemented by Edunet Foundation.",
+      "link": ""
+    },
+    {
+      "title": "IT Intern",
+      "subtitle": "01 Jun 2026 - 31 Aug 2026",
+      "description": "Completed a 3-month remote IT Internship at DIGISAMAKSH, focusing on full-stack web development, WordPress maintenance, and software troubleshooting.",
+      "link": ""
+    },
+    {
+      "title": "Edunet - University Engagements - AICTEInternship",
+      "subtitle": "25 May 2026",
+      "description": "Successfully completed the Edunet AICTE Internship powered by IBM SkillsBuild, gaining advanced industry-relevant competencies.",
+      "link": ""
+    },
+    {
+      "title": "Reporting Manager",
+      "subtitle": "18 Sep 2024 - 17 May 2026",
+      "description": "Started as a Quality Checker intern and promoted as a Reporting Manager at GEMA Edtech, showcasing my skills in communication, Canva, Google spreadsheet, team management, etc...",
+      "link": ""
+    }
+  ],
+  "projects": [
+    {
+      "title": "Shabdh Buddhi Kreeda",
+      "subtitle": "An interactive Puzzle Console",
+      "description": "IoT based Project"
+    },
+    {
+      "title": "Create a Project Charter with Google Docs",
+      "subtitle": "22 Jun 2023",
+      "description": "Successfully earned a Coursera Project Certificate for completing the guided project \"Create a Project Charter with Google Docs.\"",
+      "link": ""
+    },
+    {
+      "title": "Greenhouse Gas Emission Prediction",
+      "subtitle": "Prediction Project",
+      "description": "This project leverages machine learning to predict greenhouse gas (GHG) emissions driven by supply chain activities, beautifully blending data science with environmental responsibility to support global sustainability effortsA machine learning project",
+      "link": "https://github.com/Kammari-Sushma/Greenhouse-gas"
+    },
+    {
+      "title": "Network Port Scanner GUI",
+      "subtitle": "",
+      "description": "This project is a Multithreaded Network Port Scanner featuring a vibrant, cyberpunk-themed Graphical User Interface (GUI). It allows users to quickly scan a target IP address or hostname across a customizable range of ports to identify open connections and their associated services.",
+      "link": "https://github.com/Kammari-Sushma/Network-Port-Scanner-GUI"
+    },
+    {
+      "title": " Keystroke Logging Demonstration",
+      "subtitle": "",
+      "description": "The Keylogger Control Panel is a lightweight, locally hosted keystroke logging application featuring an interactive Graphical User Interface (GUI).",
+      "link": "https://github.com/Kammari-Sushma/Keystroke-Logging-Demonstration"
+    },
+    {
+      "title": "Child Mortality Detection",
+      "subtitle": "",
+      "description": "This project is a web-based application built with Django that leverages Machine Learning to predict and analyze child mortality rates. It provides a platform for data management, model training, and visualization to help identify key factors contributing to child mortality.",
+      "link": "https://github.com/Kammari-Sushma/Child-Mortality-Detection"
+    },
+    {
+      "title": "Real Time Live Sports Scoreboard",
+      "subtitle": "1 Jul 2024 - 1 Aug 2024",
+      "description": "A single-page web application that simulates live football scores, match highlights, and league standings — styled with a modern neon sports theme. Built with vanilla HTML, CSS, and JavaScript, this project demonstrates dynamic DOM updates, SPA-style navigation, and mock API simulations.",
+      "link": "https://github.com/Kammari-Sushma/Real-Time-Live-Sports-Scoreboard"
+    },
+    {
+      "title": "Street Vendor Digitalization",
+      "subtitle": "",
+      "description": "Built on IBM watsonx Orchestrate and Granite models, this multi-agent AI empowers street vendors by simplifying PM SVANidhi micro-loans via a RAG pipeline. It offers step-by-step, jargon-free guidance for merchant UPI setup, e-KYC, and map pinning via a zero-friction mobile web chat, actively driving financial inclusion for micro-entrepreneurs.",
+      "link": "https://kammari-sushma.github.io/Street-Vendor-Digitalization/"
+    },
+    {
+      "title": "nexus ai assistant",
+      "subtitle": "",
+      "description": "Nexus AI Assistant is a modern, multi-LLM-powered web application designed to streamline productivity and creativity. It features a sleek, dark-themed interface offering dedicated modes for accurate question-answering, text summarization, and dynamic content generation.",
+      "link": "https://nexus-ai-app-dnle.onrender.com/"
+    },
+    {
+      "title": "json-formatter-tool",
+      "subtitle": "",
+      "description": "json Formatter & Validator is a lightweight, client-side tool to format, minify, and validate JSON instantly. No backend, no installs — just paste and go.",
+      "link": "json-formatter-tool-ashen.vercel.app"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Junior Software Programmer in APPC & TBOCWWB",
+      "subtitle": "2023 - 2024",
+      "description": "Completed skill upgradation training with practical learning",
+      "link": ""
+    },
+    {
+      "title": "Introduction to Computers and Operating Systems and Security",
+      "subtitle": "Microsoft | Coursera",
+      "description": "Earned a Microsoft-authorized course certificate in via Coursera, validating foundational knowledge in hardware, OS functions, and core cybersecurity principles.",
+      "link": ""
+    },
+    {
+      "title": "AI for Everyone ",
+      "subtitle": "11 Sep 2023",
+      "description": "Successfully completed the \"AI For Everyone\" course by DeepLearning.AI on Coursera to build a foundational understanding of artificial intelligence concepts and their real-world applications.",
+      "link": ""
+    },
+    {
+      "title": "Foundations of Cybersecurity",
+      "subtitle": "31 Jul 2023",
+      "description": "Successfully completed the \"Foundations of Cybersecurity\" course authorized by Google via Coursera, gaining fundamental knowledge in digital security and threat mitigation.",
+      "link": ""
+    },
+    {
+      "title": "Cybersecurity and Its Ten Domains",
+      "subtitle": "19 Sep 2023",
+      "description": "Earned a Coursera certification in Cybersecurity and Its Ten Domains from Kennesaw State University, mastering core foundational concepts across the industry's key disciplines.",
+      "link": ""
+    },
+    {
+      "title": "Connect and Protect: Networks and Network Security",
+      "subtitle": "6 Sep 2023 - Google",
+      "description": "Earned a Google Coursera certificate in network security fundamentals, focusing on data protection, network protocols, and defensive architecture.",
+      "link": ""
+    },
+    {
+      "title": "Tools of the Trade: Linux and SQL",
+      "subtitle": "10 Nov 2023 - Google",
+      "description": "Earned a Google Course Certificate in Tools of the Trade: Linux and SQL via Coursera, validating fundamental skills in command-line operations and database management.",
+      "link": ""
+    },
+    {
+      "title": "Introduction to Data Engineering",
+      "subtitle": "23 Nov 2023",
+      "description": "Successfully earned a verified IBM certification in Introduction to Data Engineering via Coursera, mastering foundational concepts of data pipelines, ecosystems, and modern lifecycle architectures.",
+      "link": ""
+    },
+    {
+      "title": "Digital Productivity",
+      "subtitle": "15 Feb 2025",
+      "description": "Successfully earned a Certificate of Completion in Digital Productivity from the NIIT Foundation and UNICEF's Passport to Earning initiative.",
+      "link": ""
+    },
+    {
+      "title": "Python Bootcamp",
+      "subtitle": "21 May 2025 - 23 May 2025",
+      "description": "Successfully completed a 3-day intensive Python Bootcamp certified by LetsUpgrade in collaboration with NSDC.",
+      "link": ""
+    },
+    {
+      "title": "Excel Bootcamp",
+      "subtitle": "8 May 2025 - 9 May 2025",
+      "description": "Completed a 2-day Excel Bootcamp with LetsUpgrade to master data management and analytical spreadsheet functions.",
+      "link": ""
+    },
+    {
+      "title": "TechA Python Developer Certification",
+      "subtitle": "8 Nov 2025",
+      "description": "Earned the TechA Python Developer Certification from Infosys Springboard, demonstrating industry-validated proficiency in core Python programming principles.",
+      "link": ""
+    },
+    {
+      "title": "Introduction to Cloud Computing",
+      "subtitle": "30 Oct 2025",
+      "description": "Successfully earned a course completion certificate in Introduction to Cloud Computing from Infosys Springboard on October 30, 2025.",
+      "link": ""
+    },
+    {
+      "title": "Azure Fundamentals: Cloud Computing",
+      "subtitle": "30 Oct 2025",
+      "description": "Successfully earned the Azure Fundamentals: Cloud Computing certificate through Infosys Springboard on October 30, 2025.",
+      "link": ""
+    },
+    {
+      "title": "Protection from Browser Attacks",
+      "subtitle": "14 March 2026",
+      "description": "Certified by VOIS in cybersecurity best practices, specializing in defending against browser-based security vulnerabilities and attacks",
+      "link": ""
+    },
+    {
+      "title": "Introduction to System Security",
+      "subtitle": "19 Mar 2026",
+      "description": "Successfully completed the Introduction to System Security certification from VOIS on March 19, 2026 (Credential ID: VFLMS26_149236).",
+      "link": ""
+    },
+    {
+      "title": "Advance Course on Emerging Technologies",
+      "subtitle": "2025-26",
+      "description": "Successfully completed an advanced training program on Emerging Technologies covering AI/ML, Deep Learning, Edge Computing, and SAP Analytics Cloud under the SAP Code Unnati initiative",
+      "link": ""
+    },
+    {
+      "title": "Getting Started with Cyberssecurity",
+      "subtitle": "26 May 2026",
+      "description": "Earned an official IBM SkillsBuild credential covering essential cybersecurity frameworks and security best practices.",
+      "link": ""
+    },
+    {
+      "title": "Getting Started with Artificial Intelligence",
+      "subtitle": "25 May 2026",
+      "description": "Completed the \"Getting Started with Artificial Intelligence\" certification from IBM SkillsBuild to develop a foundational understanding of AI principles and applications.",
+      "link": ""
+    },
+    {
+      "title": "Journey to Cloud: Envisioning Your Solution",
+      "subtitle": "27 May 2026",
+      "description": "Completed a 5-hour IBM SkillsBuild course on \"Journey to Cloud: Envisioning Your Solution,\" focusing on cloud architecture design and strategy.",
+      "link": ""
+    },
+    {
+      "title": "Exploring Quantum Computing",
+      "subtitle": "25 May 2026",
+      "description": "Successfully earned an IBM SkillsBuild certification in Exploring Quantum Computing, mastering foundational principles of quantum technologies over a focused 50-minute curriculum.",
+      "link": ""
+    },
+    {
+      "title": "Level Up Cybersecurity with Generative AI",
+      "subtitle": "27 May 2026",
+      "description": "Upskilled in integrating Generative AI workflows with cybersecurity practices through IBM SkillsBuild.",
+      "link": ""
+    },
+    {
+      "title": "Lab: Troubleshoot Your Code Using IBM Bob",
+      "subtitle": "29 May 2026",
+      "description": "Certified by IBM SkillsBuild in code troubleshooting and debugging workflows powered by IBM Bob.",
+      "link": ""
+    },
+    {
+      "title": "Gen AI",
+      "subtitle": "15 Jun 2026",
+      "description": "Successfully earned a government-approved \"Gen AI 101\" certification from FutureSkills Prime and Nasscom, mastering foundational principles of generative artificial intelligence.",
+      "link": ""
+    }
+  ],
+  "editable-address": "Hyderabad, Telangana, India",
+  "editable-email": "sushmakammarisushma@gmail.com",
+  "editable-phone": "+91 9182679945",
+  "editable-linkedin": "linkedin.com/in/kammari-sushma",
+  "editable-github": "github.com/Kammari-Sushma"
+}
