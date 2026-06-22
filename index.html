@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kammari Sushma | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Contact Details Styling */
+        .contact-item { margin-bottom: 10px; font-size: 1.1rem; }
+        .contact-icon { color: #8b5cf6; margin-right: 10px; }
+        
+        .contact-link {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-link:hover {
+            color: #8b5cf6;
+            text-decoration: underline;
+        }
+
+        :root { --bg-color: #050505; --text-main: #ffffff; --text-muted: #888888; --purple-glow: rgba(139, 92, 246, 0.4); --card-bg: rgba(255, 255, 255, 0.03); --border-color: rgba(255, 255, 255, 0.1); }
+        body.light-mode { --bg-color: #f5f5f5; --text-main: #111111; --text-muted: #555555; --card-bg: rgba(0, 0, 0, 0.05); --border-color: rgba(0, 0, 0, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .sticky-resume { position: fixed; right: -30px; top: 50%; transform: translateY(-50%) rotate(90deg); letter-spacing: 4px; font-size: 12px; color: var(--text-muted); cursor: pointer; z-index: 100; }
+        nav { display: flex; justify-content: space-between; padding: 2rem 5%; position: absolute; width: 100%; z-index: 10; }
+        nav .logo { font-weight: 800; font-size: 1.2rem; cursor: pointer; }
+        .controls { display: flex; align-items: center; gap: 20px; }
+        nav ul { display: flex; gap: 20px; text-align: right; font-size: 0.9rem; font-weight: 600; }
+        .theme-btn { background: none; border: none; color: var(--text-main); cursor: pointer; font-size: 1.2rem; transition: transform 0.2s; }
+        
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .modal-content { background: var(--bg-color); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color); width: 320px; display: flex; flex-direction: column; gap: 1rem; }
+        .modal-content input { padding: 12px; border-radius: 5px; border: 1px solid var(--border-color); background: transparent; color: var(--text-main); }
+        
+        #top-controls { display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000; gap: 10px; }
+        [contenteditable="true"] { border-bottom: 1px dashed #8b5cf6; outline: none; transition: background 0.2s; }
+        [contenteditable="true"]:focus { background: rgba(139, 92, 246, 0.1); }
+
+        #admin-panel { display: none; background: var(--card-bg); padding: 2rem; margin: 2rem 5%; border-radius: 12px; border: 1px solid #8b5cf6; }
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .admin-box { background: var(--bg-color); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);}
+        .admin-box input, .admin-box textarea, .admin-box select { width: 100%; margin-bottom: 10px; padding: 10px; background: transparent; color: var(--text-main); border: 1px solid var(--border-color); border-radius: 4px; }
+
+        .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 5rem; }
+        .glow-orb { position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background: var(--purple-glow); filter: blur(100px); border-radius: 50%; z-index: 0; }
+        .hero-content { z-index: 1; text-align: center; }
+        .hero h2 { color: var(--text-muted); font-weight: 400; margin-bottom: 0.5rem; }
+        .hero h1 { font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; }
+        .profile-img { width: 250px; height: 250px; background-color: var(--card-bg); border-radius: 20px; margin: 0 auto 3rem auto; border: 1px solid var(--border-color); background-size: cover; background-position: center;}
+
+        .marquee-container { width: 100%; overflow: hidden; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; background: rgba(0,0,0,0.5); z-index: 1; }
+        .marquee-content { display: flex; white-space: nowrap; animation: marquee 15s linear infinite; }
+        .marquee-content span { font-size: 1.5rem; font-weight: 800; color: #c084fc; padding: 0 2rem; letter-spacing: 2px; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .section { padding: 5rem 5%; max-width: 800px; margin: 0 auto; }
+        .section-title { font-size: 3rem; font-weight: 800; margin-bottom: 2rem; text-transform: uppercase; line-height: 1.1; }
+
+        .accordion { background-color: var(--card-bg); color: var(--text-main); cursor: pointer; padding: 1.5rem; width: 100%; border: 1px solid var(--border-color); text-align: left; outline: none; font-size: 1.2rem; font-weight: 600; transition: 0.4s; display: flex; justify-content: space-between; align-items: center; }
+        .accordion:hover { background-color: rgba(255, 255, 255, 0.08); }
+        .accordion::after { content: '+'; font-size: 1.5rem; color: var(--text-muted); }
+        .accordion.active::after { content: '-'; }
+        .panel { padding: 0 1.5rem; background-color: transparent; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out; border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid transparent; }
+        .panel p { padding: 1.5rem 0; color: var(--text-muted); }
+        .active + .panel { border-bottom: 1px solid var(--border-color); }
+
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1rem; }
+        .tech-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; text-align: center; font-size: 0.8rem; backdrop-filter: blur(10px); transition: transform 0.3s; }
+        .tech-box:hover { transform: translateY(-5px); border-color: #c084fc; }
+
+        .btn { display: inline-block; padding: 1rem 2rem; background: #2a2a2a; color: white; border: none; border-radius: 8px; font-weight: 600; margin-top: 2rem; transition: background 0.3s; cursor: pointer;}
+        .btn-purple { background: #8b5cf6; }
+        .btn-purple:hover { background: #7c3aed; }
+
+        /* Contact Details Styling */
+        .contact-item { margin-bottom: 10px; font-size: 1.1rem; }
+        .contact-icon { color: #8b5cf6; margin-right: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3 style="text-align: center;">Secret Login</h3>
+            <input type="text" id="login-user" placeholder="Username">
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-pass" placeholder="Password">
+            <button class="btn btn-purple" style="margin-top:0;" onclick="checkLogin()">Login</button>
+            <button class="btn" style="margin-top:0; padding: 0.8rem;" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <div id="top-controls">
+        <button class="btn btn-purple" style="margin: 0; padding: 0.8rem 1.5rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);" onclick="saveTextEdits()">💾 Save Text Updates</button>
+        <button class="btn" style="margin: 0; padding: 0.8rem 1.5rem; background: #dc2626;" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="sticky-resume" onclick="openResume()">RESUME ◳</div>
+
+    <nav>
+        <div class="logo" onclick="openModal()" title="Secret Login">KS</div>
+        <div class="controls">
+            <ul>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">WORK</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <button class="theme-btn" onclick="toggleTheme()" title="Toggle Theme">☀️</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="glow-orb"></div>
+        <div class="hero-content">
+            <h2 id="editable-greeting">Hello! I'm</h2>
+            <h1 id="editable-name">YOUR NAME HERE</h1>
+            <div class="profile-img" id="display-photo"></div>
+        </div>
+
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span>FULL-STACK DEVELOPER</span><span>•</span>
+                <span>AI & PROMPT ENGINEER</span><span>•</span>
+                <span>OPERATIONS & REPORTING</span><span>•</span>
+                <span>SOFTWARE PROGRAMMER</span><span>•</span>
+                <span>FULL-STACK DEVELOPER</span><span>•</span>
+                <span>AI & PROMPT ENGINEER</span><span>•</span>
+                <span>OPERATIONS & REPORTING</span><span>•</span>
+                <span>SOFTWARE PROGRAMMER</span><span>•</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="about">
+            <p id="editable-about" style="font-size: 1.2rem; color: var(--text-muted); text-align: center;">
+                I am a self-taught AI & Full-Stack Developer. I build intelligent systems, chatbots, and modern web applications.
+            </p>
+            <div style="text-align: center;">
+                <a href="experience.html" class="btn btn-purple">View Detailed Internships & Projects →</a>
+            </div>
+        </section>
+
+        <section class="section" id="services">
+            <h2 class="section-title">WHAT<br>I DO</h2>
+            
+            <button class="accordion">Full-Stack Development</button>
+            <div class="panel">
+                <p>Building data-driven, dynamic web applications using JavaScript, Node.js, Python, and Django. Focused on creating seamless front-end UIs and robust backend architectures.</p>
+            </div>
+
+            <button class="accordion">AI & Machine Learning</button>
+            <div class="panel">
+                <p>Designing AI-powered solutions and engineering precise prompts. Leveraging Machine Learning algorithms for complex predictive analysis, such as mortality rates and emission tracking.</p>
+            </div>
+
+            <button class="accordion">Operations & Data Management</button>
+            <div class="panel">
+                <p>Ensuring operational accuracy and efficiency through precise data review. Experienced as a Reporting Manager utilizing Google Workspace, Canva, and workflow automation to streamline business operations.</p>
+            </div>
+        </section>
+
+        <section class="section" id="tech">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-weight: 400; color: var(--text-muted);">TECH STACK</h2>
+            <div class="tech-grid">
+                <div class="tech-box">Python</div>
+                <div class="tech-box">JavaScript</div>
+                <div class="tech-box">Node.js</div>
+                <div class="tech-box">Django</div>
+                <div class="tech-box">SQL & DBMS</div>
+                <div class="tech-box">AI / Prompts</div>
+                <div class="tech-box">HTML / CSS</div>
+                <div class="tech-box">Framer / Canva</div>
+            </div>
+        </section>
+
+        <section class="section" id="contact" style="border-top: 1px solid var(--border-color); text-align: center; padding-top: 4rem;">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <div style="display: flex; flex-direction: column; align-items: center; color: var(--text-muted);">
+                <div class="contact-item"><span class="contact-icon">📍</span> <span id="editable-address">Hyderabad, Telangana, India</span></div>
+                
+                <div class="contact-item"><span class="contact-icon">📧</span> <a href="mailto:sushmakammarisushma@gmail.com" id="editable-email" class="contact-link">sushmakammarisushma@gmail.com</a></div>
+                
+                <div class="contact-item"><span class="contact-icon">📞</span> <a href="tel:+919182679945" id="editable-phone" class="contact-link">+91 9182679945</a></div>
+                
+                <div class="contact-item"><span class="contact-icon">💼</span> <a href="https://linkedin.com/in/kammari-sushma" target="_blank" id="editable-linkedin" class="contact-link">linkedin.com/in/kammari-sushma</a></div>
+                
+                <div class="contact-item"><span class="contact-icon">💻</span> <a href="https://github.com/Kammari-Sushma" target="_blank" id="editable-github" class="contact-link">github.com/Kammari-Sushma</a></div>
+            </div>
+        </section>
+    </main>
+
+    <section id="admin-panel" class="section">
+        <h2 style="color: #8b5cf6; margin-bottom: 1rem;">⚙️ CMS Dashboard</h2>
+        <div class="admin-grid">
+            
+            <div class="admin-box">
+                <h3 style="margin-bottom: 10px;">Upload Files</h3>
+                <label style="font-size: 0.9rem; color: var(--text-muted);">Profile Photo:</label>
+                <input type="file" id="photo-file" accept="image/*">
+                <button class="btn btn-purple" style="margin-top: 0; padding: 8px 15px; font-size: 0.9rem;" onclick="uploadFile('photo')">Upload Photo</button>
+                <br><br>
+                <label style="font-size: 0.9rem; color: var(--text-muted);">Resume (PDF):</label>
+                <input type="file" id="resume-file" accept=".pdf">
+                <button class="btn btn-purple" style="margin-top: 0; padding: 8px 15px; font-size: 0.9rem;" onclick="uploadFile('resume')">Upload Resume</button>
+            </div>
+
+            <div class="admin-box">
+                <h3 style="margin-bottom: 10px;">Add New Experience</h3>
+                <select id="list-type">
+                    <option value="projects">Project</option>
+                    <option value="internships">Internship</option>
+                    <option value="courses">Course</option>
+                </select>
+                <input type="text" id="item-title" placeholder="Title (e.g. AI Chatbot)">
+                <input type="text" id="item-sub" placeholder="Subtitle (e.g. Aug 2023 - Google)">
+                <input type="url" id="item-link" placeholder="Hyperlink (e.g. GitHub URL) - Optional">
+                <textarea id="item-desc" placeholder="Description..." rows="3"></textarea>
+                <button class="btn btn-purple" style="width: 100%; margin-top: 0; padding: 10px;" onclick="addListItem()">Add to List</button>
+            </div>
+
+            <div class="admin-box" style="grid-column: 1 / -1;">
+                <h3 style="margin-bottom: 10px;">Manage Existing Experience</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 15px;">Edit or Delete your existing items here.</p>
+                <div id="admin-manage-list" style="display: flex; flex-direction: column; gap: 10px;">
+                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // --- UI LOGIC (Accordions & Themes) ---
+        document.addEventListener("DOMContentLoaded", () => {
+            const accordions = document.querySelectorAll(".accordion");
+            accordions.forEach(accordion => {
+                accordion.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) panel.style.maxHeight = null;
+                    else panel.style.maxHeight = panel.scrollHeight + "px";
+                });
+            });
+            loadTheme();
+            fetchPortfolioData();
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle("light-mode");
+            const themeBtn = document.querySelector(".theme-btn");
+            if (document.body.classList.contains("light-mode")) {
+                themeBtn.innerText = "🌙"; localStorage.setItem("theme", "light");
+            } else {
+                themeBtn.innerText = "☀️"; localStorage.setItem("theme", "dark");
+            }
+        }
+        function loadTheme() {
+            if (localStorage.getItem("theme") === "light") {
+                document.body.classList.add("light-mode");
+                document.querySelector(".theme-btn").innerText = "🌙";
+            }
+        }
+
+        // --- CMS & DATA LOGIC ---
+        let sessionToken = "";
+        let portfolioData = {};
+        
+        // Added the new contact IDs so they can be clicked and edited!
+        const editableElements = [
+            'editable-greeting', 'editable-name', 'editable-about', 
+            'editable-address', 'editable-email', 'editable-phone', 
+            'editable-linkedin', 'editable-github'
+        ];
+
+        async function fetchPortfolioData() {
+            try {
+                const res = await fetch('http://localhost:3000/api/data');
+                portfolioData = await res.json();
+                
+                // Inject Text Data & Update Links dynamically
+                editableElements.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && portfolioData[id]) {
+                        // 1. Set the text
+                        el.innerHTML = portfolioData[id];
+                        
+                        // 2. If it's a link, update the hidden 'href' automatically
+                        if (id === 'editable-email') el.href = `mailto:${portfolioData[id].trim()}`;
+                        if (id === 'editable-phone') el.href = `tel:${portfolioData[id].trim()}`;
+                        if (id === 'editable-linkedin' || id === 'editable-github') {
+                            const url = portfolioData[id].trim();
+                            // Ensure it has https:// so the browser doesn't think it's a local file
+                            el.href = url.startsWith('http') ? url : `https://${url}`;
+                        }
+                    }
+                });
+
+                // Prevent accidental navigation when clicking links in Edit Mode
+                document.querySelectorAll('.contact-link').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        if (this.getAttribute('contenteditable') === 'true') {
+                            e.preventDefault(); // Stops the link from opening while you are editing it
+                        }
+                    });
+                });
+
+                // Inject Photo
+                if (portfolioData.profileImage) {
+                    document.getElementById('display-photo').style.backgroundImage = `url('http://localhost:3000${portfolioData.profileImage}')`;
+                }
+
+                // If logged in, render the management list
+                if (sessionToken) renderAdminItems();
+
+            } catch (error) { console.error("Backend not connected."); }
+        }
+
+        function openResume() {
+            if (portfolioData.resumeFile) window.open(`http://localhost:3000${portfolioData.resumeFile}`, '_blank');
+            else alert("No resume uploaded yet!");
+        }
+
+        // --- AUTHENTICATION ---
+        const modal = document.getElementById("loginModal");
+        function openModal() { modal.style.display = "flex"; }
+        function closeModal() { modal.style.display = "none"; }
+
+        async function checkLogin() {
+            const user = document.getElementById("login-user").value;
+            const email = document.getElementById("login-email").value;
+            const pass = document.getElementById("login-pass").value;
+
+            try {
+                const res = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: user, email, password: pass })
+                });
+                const result = await res.json();
+
+                if (result.success) {
+                    sessionToken = result.token;
+                    closeModal();
+                    enableAdminMode();
+                } else { alert("Incorrect credentials."); }
+            } catch (err) { alert("Server error."); }
+        }
+
+        function logout() {
+            sessionToken = "";
+            document.getElementById('admin-panel').style.display = "none";
+            document.getElementById('top-controls').style.display = "none";
+            editableElements.forEach(id => {
+                const el = document.getElementById(id);
+                el.removeAttribute("contenteditable");
+                el.style.borderBottom = "none";
+            });
+            alert("Logged out successfully.");
+        }
+
+        function enableAdminMode() {
+            document.getElementById('admin-panel').style.display = "block";
+            document.getElementById('top-controls').style.display = "flex";
+            
+            // Highlight editable text
+            editableElements.forEach(id => {
+                const el = document.getElementById(id);
+                el.setAttribute("contenteditable", "true");
+                el.style.borderBottom = "1px dashed #8b5cf6";
+            });
+            
+            renderAdminItems(); // Render the edit/delete list
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        // --- SAVING AND UPLOADING ---
+        async function saveTextEdits() {
+            editableElements.forEach(id => portfolioData[id] = document.getElementById(id).innerHTML);
+            await pushUpdate();
+            alert("Text saved successfully!");
+        }
+
+        async function uploadFile(type) {
+            const fileInput = document.getElementById(`${type}-file`);
+            if (fileInput.files.length === 0) return alert("Please select a file first.");
+
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+            formData.append("token", sessionToken);
+
+            try {
+                const res = await fetch(`http://localhost:3000/api/upload/${type}`, { method: 'POST', body: formData });
+                const result = await res.json();
+                
+                if (result.success) {
+                    alert(`${type} uploaded successfully!`);
+                    fetchPortfolioData(); 
+                } else { alert("Upload failed."); }
+            } catch (err) { alert("Server error."); }
+        }
+
+        // --- LIST MANAGEMENT (CREATE, EDIT, DELETE) ---
+        async function addListItem() {
+            const listType = document.getElementById("list-type").value;
+            const newItem = {
+                title: document.getElementById("item-title").value,
+                subtitle: document.getElementById("item-sub").value,
+                description: document.getElementById("item-desc").value,
+                link: document.getElementById("item-link").value // Captures the new URL field
+            };
+
+            if (!newItem.title) return alert("Title is required.");
+            if (!portfolioData[listType]) portfolioData[listType] = [];
+            portfolioData[listType].push(newItem);
+
+            await pushUpdate();
+            alert(`Saved! You can view it on the Experience page.`);
+            
+            // Clear inputs and refresh the list
+            document.getElementById("item-title").value = '';
+            document.getElementById("item-sub").value = '';
+            document.getElementById("item-desc").value = '';
+            document.getElementById("item-link").value = '';
+            renderAdminItems();
+        }
+
+        // Dynamically renders your saved items so you can edit/delete them
+        function renderAdminItems() {
+            const container = document.getElementById("admin-manage-list");
+            container.innerHTML = "";
+            
+            ['projects', 'internships', 'courses'].forEach(type => {
+                if(portfolioData[type]) {
+                    portfolioData[type].forEach((item, index) => {
+                        container.innerHTML += `
+                            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--bg-color); padding: 10px; border-radius: 5px; border: 1px solid var(--border-color);">
+                                <span><strong style="color: #8b5cf6;">[${type.toUpperCase()}]</strong> ${item.title}</span>
+                                <div>
+                                    <button class="btn" style="padding: 5px 10px; font-size: 0.8rem; margin: 0; background: #333;" onclick="editItem('${type}', ${index})">✏️ Edit</button>
+                                    <button class="btn" style="padding: 5px 10px; font-size: 0.8rem; margin: 0 0 0 5px; background: #dc2626; border: none; color: white;" onclick="deleteItem('${type}', ${index})">🗑️ Delete</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+            });
+        }
+
+        // Edit function: Pulls data back into the form, deletes the old one
+        async function editItem(type, index) {
+            const item = portfolioData[type][index];
+            
+            // Populate the form
+            document.getElementById("list-type").value = type;
+            document.getElementById("item-title").value = item.title;
+            document.getElementById("item-sub").value = item.subtitle || '';
+            document.getElementById("item-desc").value = item.description || '';
+            document.getElementById("item-link").value = item.link || '';
+
+            // Delete the old item temporarily
+            portfolioData[type].splice(index, 1);
+            
+            alert("Item loaded into the form! Modify the details and click 'Add to List' to save your changes.");
+            renderAdminItems();
+            document.getElementById("item-title").focus();
+        }
+
+        // Delete function
+        async function deleteItem(type, index) {
+            if(confirm("Are you sure you want to permanently delete this item?")) {
+                portfolioData[type].splice(index, 1);
+                await pushUpdate();
+                renderAdminItems(); 
+            }
+        }
+
+        async function pushUpdate() {
+            await fetch('http://localhost:3000/api/update', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token: sessionToken, newData: portfolioData })
+            });
+        }
+    </script>
+</body>
+</html>
