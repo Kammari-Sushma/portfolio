@@ -6,14 +6,13 @@
     <title>My Experience & Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 
     <style>
         /* Base Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         /* The 3D Background Container */
+        /* The Animated Gradient Background Container */
         #vanta-bg {
             position: fixed;
             z-index: 0;
@@ -21,6 +20,15 @@
             left: 0;
             width: 100%;
             height: 100vh;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #050505);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Content Wrapper to sit above the background */
@@ -114,22 +122,6 @@
     </div>
 
     <script>
-        // Initialize the 3D Background
-        VANTA.NET({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x8b5cf6,       // Your purple accent color
-            backgroundColor: 0x050505, // Your dark background color
-            points: 12.00,
-            maxDistance: 22.00,
-            spacing: 18.00
-        });
 
         // Your original data fetching logic
         async function loadData() {
