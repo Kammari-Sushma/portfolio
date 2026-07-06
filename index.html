@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kammari Sushma | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Devicon for Programming Logos -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- FontAwesome for General Icons (AI, Database) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Contact Details Styling */
         .contact-item { margin-bottom: 10px; font-size: 1.1rem; }
@@ -71,10 +75,44 @@
         .panel p { padding: 1.5rem 0; color: var(--text-muted); }
         .active + .panel { border-bottom: 1px solid var(--border-color); }
 
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1rem; }
-        .tech-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; text-align: center; font-size: 0.8rem; backdrop-filter: blur(10px); transition: transform 0.3s; }
-        .tech-box:hover { transform: translateY(-5px); border-color: #c084fc; }
+        .tech-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); 
+            gap: 1.5rem; 
+        }
 
+        .tech-box { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            padding: 1.5rem 1rem; 
+            text-align: center; 
+            font-size: 0.9rem; 
+            font-weight: 600;
+            backdrop-filter: blur(10px); 
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Icon Styling */
+        .tech-box i { 
+            font-size: 3rem; 
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover Effects */
+        .tech-box:hover { 
+            transform: translateY(-5px); 
+            border-color: #c084fc; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .tech-box:hover i {
+            transform: scale(1.15);
+        }
         .btn { display: inline-block; padding: 1rem 2rem; background: #2a2a2a; color: white; border: none; border-radius: 8px; font-weight: 600; margin-top: 2rem; transition: background 0.3s; cursor: pointer;}
         .btn-purple { background: #8b5cf6; }
         .btn-purple:hover { background: #7c3aed; }
@@ -170,17 +208,61 @@
         <section class="section" id="tech">
             <h2 style="text-align: center; margin-bottom: 2rem; font-weight: 400; color: var(--text-muted);">TECH STACK</h2>
             <div class="tech-grid">
-                <div class="tech-box">Python</div>
-                <div class="tech-box">JavaScript</div>
-                <div class="tech-box">Node.js</div>
-                <div class="tech-box">Django</div>
-                <div class="tech-box">SQL & DBMS</div>
-                <div class="tech-box">AI / Prompts</div>
-                <div class="tech-box">HTML / CSS</div>
-                <div class="tech-box">Framer / Canva</div>
+        <!-- Python -->
+                <div class="tech-box">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                </div>
+        
+        <!-- JavaScript -->
+                <div class="tech-box">
+                    <i class="devicon-javascript-plain colored"></i>
+                      <span>JavaScript</span>
+                </div>
+        
+        <!-- Node.js -->
+                <div class="tech-box">
+                    <i class="devicon-nodejs-plain colored"></i>
+                    <span>Node.js</span>
+                </div>
+        
+        <!-- Django -->
+                <div class="tech-box">
+                    <i class="devicon-django-plain" style="color: #092e20; background: white; padding: 2px; border-radius: 4px;"></i>
+                    <span>Django</span>
+                </div>
+        
+        <!-- SQL & DBMS -->
+                <div class="tech-box">
+                    <i class="fa-solid fa-database" style="color: #3b82f6;"></i>
+                    <span>SQL & DBMS</span>
+                </div>
+        
+        <!-- AI / Prompts -->
+                <div class="tech-box">
+                    <i class="fa-solid fa-microchip" style="color: #8b5cf6;"></i>
+                    <span>AI / Prompts</span>
+                </div>
+        
+        <!-- HTML & CSS -->
+                <div class="tech-box">
+                    <div style="display: flex; gap: 8px;">
+                        <i class="devicon-html5-plain colored"></i>
+                        <i class="devicon-css3-plain colored"></i>
+                    </div>
+                    <span>HTML / CSS</span>
+                </div>
+        
+        <!-- Framer & Canva -->
+                <div class="tech-box">
+                    <div style="display: flex; gap: 8px;">
+                        <i class="devicon-framer-original" style="color: var(--text-main);"></i>
+                        <i class="devicon-canva-original"></i>
+                    </div>
+                    <span>Framer / Canva</span>
+                </div>
             </div>
         </section>
-
         <section class="section" id="contact" style="border-top: 1px solid var(--border-color); text-align: center; padding-top: 4rem;">
             <h2 class="section-title">GET IN TOUCH</h2>
             <div style="display: flex; flex-direction: column; align-items: center; color: var(--text-muted);">
